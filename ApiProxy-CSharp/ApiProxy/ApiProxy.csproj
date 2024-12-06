@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\Dictionary\HKVariants.txt" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\Dictionary\HKVariantsRevPhrases.txt" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\Dictionary\JPShinjitaiCharacters.txt" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\Dictionary\JPShinjitaiPhrases.txt" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\Dictionary\JPVariants.txt" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\Dictionary\STCharacters.txt" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\Dictionary\STPhrases.txt" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\Dictionary\TSCharacters.txt" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\Dictionary\TSPhrases.txt" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\Dictionary\TWPhrasesIT.txt" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\Dictionary\TWPhrasesName.txt" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\Dictionary\TWPhrasesOther.txt" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\Dictionary\TWVariants.txt" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\Dictionary\TWVariantsRevPhrases.txt" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\JiebaResource\char_state_tab.json" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\JiebaResource\cn_synonym.txt" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\JiebaResource\dict.txt" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\JiebaResource\idf.txt" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\JiebaResource\pos_prob_emit.json" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\JiebaResource\pos_prob_start.json" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\JiebaResource\pos_prob_trans.json" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\JiebaResource\prob_emit.json" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\JiebaResource\prob_trans.json" />
+    <Content Remove="C:\Users\Admin\.nuget\packages\openccnet\1.0.2\contentFiles\any\netstandard2.0\JiebaResource\stopwords.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenCCNET" Version="1.0.2" />
+  </ItemGroup>
+
+</Project>
