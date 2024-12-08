@@ -20,7 +20,7 @@ pip install -r requirements.txt
 }
 ```
 - `enable_opencc`: 是否启用OpenCC转换。
-- `opencc_config`: OpenCC配置文件路径。
+- `opencc_config`: OpenCC配置文件（预设配置文件名参考OpenCC项目的[预设配置文件](https://github.com/BYVoid/OpenCC?tab=readme-ov-file#%E9%A0%90%E8%A8%AD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)部分）。
 - `endpoints`: 服务器列表，每个端点包含以下字段：
   - `endpoint`: 服务器地址。
   - `max_concurrency`: 最大并发数。
