@@ -60,9 +60,15 @@ def forward_request(request, endpoint):
                 json_ensure_ascii = False if (encoding == 'utf-8' or encoding == 'utf8') else True
                 response_text = r.content.decode(encoding)
                 response_json = json.loads(response_text)
+
+                # chat completion api
                 for choice in response_json.get('choices', []):
                     if 'message' in choice and 'content' in choice['message']:
                         choice['message']['content'] = opencc_converter.convert(choice['message']['content'])
+                # completion api
+                if 'content' in response_json:
+                    response_json['content'] = opencc_converter.convert(response_json['content'])
+
                 response_text = json.dumps(response_json, ensure_ascii=json_ensure_ascii, separators=(',', ':'))
                 response_content = response_text.encode(encoding)
                 app.logger.debug(f'Converted response: {response_text}')

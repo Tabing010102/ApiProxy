@@ -41,3 +41,6 @@ app.exe
 - `-l`或`--listen_host`: 监听主机地址（默认`127.0.0.1`）。
 - `-p`或`--listen_port`: 监听端口（默认`8081`）。
 - `-d`或`--debug`: 启用调试模式。
+
+## 说明
+当前支持completion api和chat completion api
