@@ -1,7 +1,11 @@
-[
-  {
-    "endpoint": "http://127.0.0.1:8080/",
-    "max_concurrency": 16,
-    "timeout": 30
-  }
-]
+{
+  "enable_opencc": false,
+  "opencc_config": "s2t.json",
+  "endpoints": [
+    {
+      "endpoint": "http://127.0.0.1:8080/",
+      "max_concurrency": 16,
+      "timeout": 60
+    }
+  ]
+}
