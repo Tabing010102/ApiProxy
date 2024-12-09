@@ -3,10 +3,12 @@ import json
 import logging
 import threading
 from itertools import cycle
+from urllib.parse import urlparse
 
 import opencc
 import requests
 from flask import Flask, request
+from requests.adapters import HTTPAdapter
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-l', '--listen_host', default='127.0.0.1', help='Host to listen on')
@@ -21,9 +23,19 @@ if args.debug:
 with open(args.config, 'r') as f:
     config = json.load(f)
 
+
+def get_requests_session(prefix: str, max_concurrency: int) -> requests.Session:
+    session = requests.Session()
+    if max_concurrency >= 1:
+        adapter = HTTPAdapter(pool_connections=max_concurrency, pool_maxsize=max_concurrency)
+        session.mount(prefix, adapter)
+    return session
+
+
 endpoints = [{'endpoint': c['endpoint'],
               'semaphore': threading.Semaphore(c['max_concurrency']),
-              'timeout': c['timeout']}
+              'timeout': c['timeout'],
+              'session': get_requests_session(urlparse(c['endpoint']).scheme + '://', c['max_concurrency'])}
              for c in config['endpoints']]
 endpoints_cycle = cycle(endpoints)
 
@@ -44,7 +56,7 @@ def get_next_available_endpoint():
 
 def forward_request(request, endpoint):
     try:
-        r = requests.request(
+        r = endpoint['session'].request(
             method=request.method,
             url=endpoint['endpoint'] + request.path,
             headers={key: value for (key, value) in request.headers if key != 'Host'},
